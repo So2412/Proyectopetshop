@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/actualizardue.js"></script>
+    <script src="js/eliminardueno.js"></script>
+    <link href="css/administrador.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Usuario</title>
+</head>
+<body>
+
+    <section class="centrar-imagen">
+        <img src="ima/logo.PNG" class="logo-menu">
+    </section>
+    <header class="Tituloosm">   
+        <section class="barra">
+            <h2>Menu<img src="ima/lista_icono2.png" alt=""></h2>
+            <ul>
+                <li><a href="/pedido">Pedido</a></li>
+                <li><a href="/proveedor">Proveedor</a></li>
+                <li><a href="/servicios">Servicios</a></li>
+                <li><a href="/usuarios">Usuarios</a></li>
+                <li><a href="/categoria">Categoria</a></li>
+                <li><a href="/cita">Cita</a></li>
+                <li><a href="/detallecita">Detalle cita</a></li>
+                <li><a href="/detallepedido">Detalle pedido</a></li>
+                <li><a href="/dueno">Dueño</a></li>
+                <li><a href="/insumos">Insumos</a></li>
+                <li><a href="/mascota">Mascota</a></li>
+                <li><a href="/producto">Producto</a></li>
+                <li><a href="/ventas">Ventas</a></li>
+                <li><a href="/veterinario">Veterinario</a></li>
+            </ul>
+           
+        </section> 
+    </header>
+    <nav class="menu">
+        <a href="cerrar">Cerrar sesion</a>
+    </nav>
+    <div class="login-box">
+        <h1>Dueño</h1>
+        <form action="/frminsertardueno" method="POST">
+          <!--  INPUT -->
+          <input type="text" name="DueDoc" class="" placeholder="Documento Dueño" >
+          <input type="text" name="DueTipoDoc" class="" placeholder="Tipo Documento">
+          <input type="text" name="DueNombre" class="" placeholder="Nombre">
+          <input type="text" name="DueApellido" class="" placeholder="Apellido">
+          <input type="text" name="DueCorreo" class="" placeholder="Correo">
+          <input type="text" name="DueriTelefo" class="" placeholder="Telefono">
+          <input type="text" name="DueSexo" class="" placeholder="Sexo">
+          <!--  BUTTON -->
+          <button type="submit">Insertar</button>
+        </form>
+      </div>
+
+      <from action="" name="frm" id="frm" class="tabla">
+        <section class="scroll">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>DOCUMENTO</th>
+                    <th>TIPO DOC</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>CORREO</th>
+                    <th>TELEFONO</th>
+                    <th>SEXO</th>
+                    <th>ACTUALIZAR</th>
+                    <th>ELIMINAR</th>
+                </tr>
+            </thead>
+   	
+            <tbody>
+             <% datos.forEach(function (datos){ %>    
+                <tr>
+                    <td><input type="text" value="<%=datos.DueDoc%>" name="doc" id="doc" class="doc"></td>
+                    <td><input type="text" value="<%=datos.DueTipoDoc%>" name="ti" id="ti" class="ti"></td>
+                    <td><input type="text" value="<%=datos.DueNombre%>" name="no" id="no" class="no"></td>                
+                    <td><input type="text" value="<%=datos.DueApellido%>" name="ap" id="ap" class="ap"></td> 
+                    <td><input type="text" value="<%=datos.DueCorreo%>" name="co" id="co" class="co"></td> 
+                    <td><input type="text" value="<%=datos.DueriTelefo%>" name="te" id="te" class="te"></td> 
+                    <td><input type="text" value="<%=datos.DueSexo%>" name="se" id="se" class="se"></td> 
+                    <td><input type="submit" value="Actualizar" name="btnact" id="btnact" class="btnact"></td>
+                    <td><input type="submit" value="Eliminar" name="btneli" id="btneli" class="btneli"></td>                                
+                </tr>
+             <%})%>
+            </tbody>
+        </table>
+    </section>
+    </from>
+
+</body>
+</html>

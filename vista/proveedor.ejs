@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link href="css/administrador.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Proveedor</title>
+</head>
+<body>
+
+    <section class="centrar-imagen">
+        <img src="ima/logo.PNG" class="logo-menu">
+    </section>
+    <header class="Tituloosm">   
+        <section class="barra">
+            <h2>Menu<img src="ima/lista_icono2.png" alt=""></h2>
+            <ul>
+                <li><a href="/pedido">Pedido</a></li>
+                <li><a href="/proveedor">Proveedor</a></li>
+                <li><a href="/servicios">Servicios</a></li>
+                <li><a href="/usuarios">Usuarios</a></li>
+                <li><a href="/categoria">Categoria</a></li>
+                <li><a href="/cita">Cita</a></li>
+                <li><a href="/detallecita">Detalle cita</a></li>
+                <li><a href="/detallepedido">Detalle pedido</a></li>
+                <li><a href="/dueno">Dueño</a></li>
+                <li><a href="/insumos">Insumos</a></li>
+                <li><a href="/mascota">Mascota</a></li>
+                <li><a href="/producto">Producto</a></li>
+                <li><a href="/ventas">Ventas</a></li>
+                <li><a href="/veterinario">Veterinario</a></li>
+            </ul>
+           
+        </section> 
+    </header>
+    <nav class="menu">
+        <a href="cerrar">Cerrar sesion</a>
+    </nav>
+    <div class="login-box">
+        <h1>Proveedor</h1>
+        <form action="/frminsertarproveedor" method="POST">
+          <!--  INPUT -->
+          <input type="text" name="ProveDoc"       class="" placeholder="Documento proveedor">
+          <input type="text" name="ProveTipoDoc"   class="" placeholder="Tipo de documento">
+          <input type="text" name="ProveUsuDoc"    class="" placeholder="Documento usuario ">
+          <input type="text" name="ProveNombre"    class="" placeholder="Nombre proveedor">
+          <input type="text" name="ProveApellido"  class="" placeholder="Apellido proveedor">
+          <input type="text" name="ProveDireccion" class="" placeholder="Direccion proveedor">
+          <!--  BUTTON -->
+          <button type="submit">Insertar</button>
+        </form>
+      </div>
+
+      <from action="" name="frm" id="frm" class="tabla">
+        <section class="scroll">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>DOCUMENTO</th>
+                    <th>TIPO DOC</th>
+                    <th>DOCUMENTO USUARIO</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>DIRECCIÓN</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+             <% datos.forEach(function (datos){ %>    
+                <tr>
+                    <td><input type="text" value="<%=datos.ProveDoc%>" name="doc" id="doc" class="doc"></td>
+                    <td><input type="text" value="<%=datos.ProveTipoDoc%>" name="ti" id="ti" class="ti"></td>
+                    <td><input type="text" value="<%=datos.ProveUsuDoc%>" name="us" id="us" class="us"></td>                
+                    <td><input type="text" value="<%=datos.ProveNombre%>" name="no" id="no" class="no" ></td> 
+                    <td><input type="text" value="<%=datos.ProveApellido%>" name="ap" id="ap" class="ap"></td> 
+                    <td><input type="text" value="<%=datos.ProveDireccion%>" name="di" id="di" class="di"></td>                                
+                </tr>
+             <%})%>
+            </tbody>
+        </table>
+    </section>
+    </from>
+
+</body>
+</html>

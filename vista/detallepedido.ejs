@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/administrador.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Usuario</title>
+</head>
+<body>
+
+    <section class="centrar-imagen">
+        <img src="ima/logo.PNG" class="logo-menu">
+    </section>
+    <header class="Tituloosm">   
+        <section class="barra">
+            <h2>Menu<img src="ima/lista_icono2.png" alt=""></h2>
+            <ul>
+                <li><a href="/pedido">Pedido</a></li>
+                <li><a href="/proveedor">Proveedor</a></li>
+                <li><a href="/servicios">Servicios</a></li>
+                <li><a href="/usuarios">Usuarios</a></li>
+                <li><a href="/categoria">Categoria</a></li>
+                <li><a href="/cita">Cita</a></li>
+                <li><a href="/detallecita">Detalle cita</a></li>
+                <li><a href="/detallepedido">Detalle pedido</a></li>
+                <li><a href="/dueno">Dueño</a></li>
+                <li><a href="/insumos">Insumos</a></li>
+                <li><a href="/mascota">Mascota</a></li>
+                <li><a href="/producto">Producto</a></li>
+                <li><a href="/ventas">Ventas</a></li>
+                <li><a href="/veterinario">Veterinario</a></li>
+            </ul>
+           
+        </section> 
+    </header>
+    <nav class="menu">
+        <a href="cerrar">Cerrar sesion</a>
+    </nav>
+    <div class="login-box">
+        <h1>Detalle Pedido</h1>
+        <form action="/frminsertardetallepedido" method="POST">
+          <!--  INPUT -->
+          <input type="text" name="DetPedId" class="" placeholder="Id Detalle Pedido">
+          <input type="text" name="DetPedIdPed" class="" placeholder="Id Pedido">
+          <input type="text" name="DetPedIdProdu" class="" placeholder="Id Producto">
+          <input type="text" name="DetPedNombreArti" class="" placeholder="Nombre Articulo">
+          <input type="text" name="DetPedUnidadesArti" class="" placeholder="Unidades Articulo">
+          <input type="text" name="DetPedPrecioporUni" class="" placeholder="Precio por Unidades">
+          <input type="text" name="DetPedPrecioTotalProdu" class="" placeholder="Precio Total del Producto">
+          <input type="text" name="DetPedCostoTotalPed" class="" placeholder="Costo Total del Pedido">
+          <input type="text" name="DetPedCostoEnvio" class="" placeholder="Costo Envio">
+          
+          <!--  BUTTON -->
+          <button type="submit">Insertar</button>
+        </form>
+      </div>
+
+      <from action="" name="frm" id="frm" class="tabla">
+        <section class="scroll">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID DETALLE PED</th>
+                    <th>ID PEDIDO</th>
+                    <th>ID PRODUCTO</th>
+                    <th>NOMBRE ARTICULO</th>
+                    <th>UNIDADES ARTICULO</th>
+                    <th>PRECIO POR UNIDADES</th>
+                    <th>PRECIO TOTAL PRODUCTO</th>
+                    <th>COSTO TOTAL PEDIDO</th>
+                    <th>COSTO ENVIO</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+             <% datos.forEach(function (datos){ %>    
+                <tr>
+                    <td><input type="text" value="<%=datos.DetPedId%>" name="idde" id="idde" class="idde"></td>
+                    <td><input type="text" value="<%=datos.DetPedIdPed%>" name="idp" id="idp" class="idp"></td>
+                    <td><input type="text" value="<%=datos.DetPedIdProdu%>" name="idpro" id="idpro" class="idpro"></td>                
+                    <td><input type="text" value="<%=datos.DetPedNombreArti%>" name="nom" id="nom" class="nom"></td> 
+                    <td><input type="text" value="<%=datos.DetPedUnidadesArti%>" name="uni" id="uni" class="uni"></td> 
+                    <td><input type="text" value="<%=datos.DetPedPrecioporUni%>" name="preci" id="preci" class="preci"></td> 
+                    <td><input type="text" value="<%=datos.DetPedPrecioTotalProdu%>" name="totalpro" id="totalpro" class="totalpro"></td> 
+                    <td><input type="text" value="<%=datos.DetPedCostoTotalPed%>" name="costopedi" id="costopedi" class="costopedi"></td> 
+                    <td><input type="text" value="<%=datos.DetPedCostoEnvio%>" name="costoenvio" id="costoenvio" class="costoenvio"></td>                                
+                </tr>
+             <%})%>
+            </tbody>
+        </table>
+    </section>
+    </from>
+
+
+
+</body>
+</html>

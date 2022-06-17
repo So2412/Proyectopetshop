@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/7def131b63.js" crossorigin="anonymous"></script><script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Registrar dueño y mascota</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="/frminsertarduenopri" method="POST" class="sign-in-form">
+            <h2 class="title">Registrar dueño</h2>
+            <div class="input-field">
+                <i class="fa-solid fa-id-card"></i>
+                <input type="text" name="DueDoc" class="" placeholder="Documento" >
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-id-card"></i>
+                <input type="text" name="DueTipoDoc" class="" placeholder="Tipo de documento">
+            </div>
+            <div class="input-field">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" name="DueNombre" class="" placeholder="Nombre">
+            </div>
+            <div class="input-field">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" name="DueApellido" class="" placeholder="Apellido">
+            </div>
+            <div class="input-field">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="text" name="DueCorreo" class="" placeholder="Correo">
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-square-phone-flip"></i>
+                <input type="text" name="DueriTelefo" class="" placeholder="Telefono">
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-venus-mars"></i>
+                <input type="text" name="DueSexo" class="" placeholder="Sexo">
+            </div>
+            <input type="submit" value="Registrar" class="btn solid" />
+            
+          </form>
+          <form action="/frminsertarmascotaspri" method="POST" class="sign-up-form">
+            <h2 class="title">Registrar mascota</h2>
+            
+            <div class="input-field">
+                <i class="fa-solid fa-id-card"></i>
+                <input type="text" name="MascoDocDue" class="" placeholder="Documento dueño">
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-paw"></i>
+                <input type="text" name="MascoNombre" class="" placeholder="Nombre mascota">
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-paw"></i>
+                <input type="text" name="MascoClase" class="" placeholder="Clase">
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-paw"></i>
+                <input type="text" name="MascoRaza" class="" placeholder="Raza">
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-weight-scale"></i>
+                <input type="text" name="MascoPeso" class="" placeholder="Peso">
+            </div>
+            <input type="submit" class="btn" value="Registrar" />
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>¿Ya te registraste?</h3>
+            <p>
+              Ahora es tiempo de que registres a tus mascotas, dale al boton para ir al formulario de regisro
+              de mascotas
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Registra tu mascota
+            </button>
+          </div>
+          <img src="ima/logo_small_icon_only.png" class="image" alt="" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>¿Vas a registrar a tu mascota?</h3>
+            <p>
+              Es importante que antes de registrar a tu mascota te registres tu, dale al boton para ir 
+              al formulario de registro
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Registrate
+            </button>
+          </div>
+          <img src="ima/logo_small_icon_only.png" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script src="js/regi.js"></script>
+  </body>
+</html>

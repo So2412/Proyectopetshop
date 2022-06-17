@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Formulario usuarios</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="img/logo_small_icon_only_inverted.png">
+    <link href= "css/citas.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <div class="logo"><img src="ima/logo.PNG" class="logo-menu"></div>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name">Menú</span>
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/nosotros">Nosotros</a></li>
+          <li>
+            <a href="">Productos</a>
+            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+            <ul class="js-sub-menu sub-menu">
+              <li><a href="/alimento">Alimentos</a></li>
+              <li><a href="/juguete">Juguetes</a></li>
+              <li><a href="/accesorio">Accesorios</a></li>
+              <li><a href="/farmaceutica">Farmaceutica</a></li>
+              <li><a href="/precio">Consultar por precio</a></li>
+            </ul>
+          </li>
+          <li><a href="/agendarcitas">Agendar citas</a></li>
+          <li><a href="/ingresar">Ingresar Admin</a></li>
+        </ul>
+      </div>
+
+  </nav>
+
+
+
+
+    <section class="container">
+		<div class="contact-box">
+			<div class="left"></div>
+			<form class="right" action="/frminsertarcitaspri" method="POST">
+				<h1 class="container-h1">Agendar cita</h1>
+                <h3 class="container-h3">Ingresa la siguiente informacion para agendar tu cita</h3>
+                <h5 class="container-h5">Da click en <a href="/regi">registrar</a> si aun no estas registrado</h5>
+                <h5 class="container-h5">¿Ya estas registrado? da click <a href="/consultarmasco">aqui</a> para consultar los datos de tu mascota</h5>
+                <select name="CitaIdServi" id="cedula" class="field" name="Busque el numero del Servicio"> 
+                    <option disabled selected>Servicio</option>
+                    <% for(i = 0; i<tbservicios.length;i++){%>
+                    <option  value="<%=tbservicios[i].ServiId%>"><%=tbservicios[i].ServiId%> - <%=tbservicios[i].ServiNombre	%></option>
+                    <%}%>
+                </select>
+                <!--<input type="text" class="field" name="CitaIdServi" placeholder="Servicio">-->
+				<input type="text" class="field" name="CitaIdMasco" placeholder="Id de Mascota">
+                <select name="CitaDocVeteri" id="cedula" class="field" name="Busque el documento del veterinario"> 
+                    <option disabled selected> Veterinario</option>
+                    <% for(i = 0; i<tbveterinario.length;i++){%>
+                    <option  value="<%=tbveterinario[i].VeteriDoc%>"><%=tbveterinario[i].VeteriNombre%> <%=tbveterinario[i].VeteriApellido	%></option>
+                    <%}%>
+                </select>
+                <!--<input type="text" class="field" name="CitaDocVeteri" placeholder="Verterinario"-->
+				<input type="text" class="field" name="CitaCorreo" placeholder="Correo">
+                <input type="text" class="field" name="CitaTelefo" placeholder="Telefono">
+                <select class="field" name="CitaHoraAsig">
+                    <option disabled selected>Hora</option>
+                    <option value="10:00 am">10:00 am</option>
+                    <option value="11:00 am" >11:00 am</option>
+                    <option value="12:00 pm">12:00 pm</option>
+                    <option value="1:00 pm" >1:00 pm</option>
+                    <option value="2:00 pm">2:00 pm</option>
+                    <option value="3:00 pm">3:00 pm</option>
+                    <option value="4:00 pm">4:00 pm</option>
+                  </select>
+				<!--<input type="text" class="field" name="CitaHoraAsig" placeholder="Hora">-->
+                <label class="tit">Fecha Asignada:</label>
+                <input type="date" class="field" name="CitaFechaAsig" placeholder="Fecha">
+				<button type="submit" class="btn">Registrar</button>
+            </form>
+		</div>
+    </section>
+
+    <section class="contenedorboton">
+        <a href="/consultarcitas"><button class="botoncont">Consulta la cita de tu mascota</button></a>
+    </section>
+
+
+    <script src="js/barralateral.js"></script>
+
+
+</body>
+</html>

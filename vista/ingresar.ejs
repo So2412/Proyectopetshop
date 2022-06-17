@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <title>Login</title>
+</head>
+<body id="bodyingre">
+
+
+  
+    <main class="login-design">
+        <div class="waves">
+            <img src="ima/perro.jpg" alt="">
+        </div>
+        <div class="login">
+            <div class="login-data">
+                <img src="ima/logo_small_icon_only.png">
+                <h1>Bienvenido</h1>
+          <form action="/ingresar" method="POST" class="login-form">
+            <div class="input-group">
+              <label class="input-fill">
+                <input type="text" name="UsuUsuario" id="email" required />
+                <span class="input-label">Usuario</span>
+                <i class="fa-solid fa-user"></i>
+                
+              </label>
+            </div>
+            <div class="input-group">
+              <label class="input-fill">
+                <input type="password" name="UsuContraseña" id="password" required />
+                <span class="input-label">Contraseña</span>
+                <i class="fas fa-lock"></i>
+              </label>
+            </div>
+            <input type="submit" value="Iniciar Sesión" class="btn-login">
+          </form> 
+            </div>
+        </div>
+    </main>
+</body>
+</html>

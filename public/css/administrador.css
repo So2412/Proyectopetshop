@@ -1,0 +1,394 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+margin:0px;
+background: url("../ima/fondo3.png") no-repeat center center/cover;
+}
+
+.Tituloosm{
+    background: rgba(0,0,0,0.5);
+
+}
+.barra {
+    font-family: 'Lato', sans-serif;
+    /**Alto y ancho de donde se va a activar cuando pase el mouse**/
+    width:10%;
+    height:9%;
+    /*Para que este siempre en la misma parte de la pantalla aunque se haga scroll*/
+    position:fixed;
+    /*Tiempo en el que va a transitar la animacion*/
+    transition: .4s all ;
+    /*este arriba de todo en la pantalla*/
+    z-index: 1;  
+    margin-top: -5.5%;
+    
+}
+
+.barra ul{
+    /*solucionar espacios no deseados*/
+    padding:0px;
+    text-align: center;
+        
+}
+.barra  li{
+    /*Velocidad de transicion del contenido*/
+    transition:all .3s;
+    list-style: none; 
+}
+
+.barra a{
+    text-decoration: none;
+    
+    font-weight: normal;
+    
+    /*La letra crece con el menu de esta manera no se va a ver como se ajusta al margen mientras crece*/
+    transition: .3s all ;
+    /*Se ocultan los elementos*/
+    font-size: 0px;
+    padding:0px;
+}
+
+.barra  h2{
+    text-align: center;
+    color:white;
+    padding:7px;
+    padding-bottom:7px;
+
+    /*Se oculta el h2*/
+    font-size:0px;   
+}
+
+.barra img{
+    padding-top: 30px;
+    padding-left: 10px;
+}
+
+.barra:hover{
+    /*Tamaño cuando el cursor señale la barra*/
+    width: 70%;
+    height: 100vh;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.871);
+}
+
+.barra:hover::-webkit-scrollbar{
+    width: 9px;
+}
+
+.barra:hover::-webkit-scrollbar-thumb{
+    background-color: rgb(179, 62, 173);
+    border-radius: 10px;
+}
+
+.barra:hover h2{
+    /*posicion dentro de barra del h2*/
+    padding:10px;
+    font-size: 2.1em;
+}
+.barra:hover a{ 
+    font-size: 1.2em;
+    color:white;
+    /*Se usa el display block para que el enlace respete el margin*/
+    display: block;
+    padding:20px;
+}
+.barra:hover img{
+    /*Desaparecer la imagen*/
+    height:0px;
+}
+
+
+.barra:hover li{
+    border-top:1px solid rgba(179, 64, 173, 0.309);
+    /*Espacios entre las lineas y el contenido*/
+    
+   /* width:100%;*/
+        
+}
+.barra:hover ul:last-of-type{
+
+
+    border-bottom: 1px solid rgba(179, 64, 173, 0.309);
+}
+
+.barra:hover a:hover{ 
+    /*font-size: 25px;
+    padding: 30px 0px; */
+    background: rgba(179, 64, 173, 0.309);  
+    border-left: 5px solid rgb(173,31,165);
+}
+
+/*Responsiver barras*/
+@media (min-width: 768px){
+    .barra:hover{
+    width: 40%;
+
+    }
+    
+}
+@media (max-width: 768px){
+    .barra{
+        margin-top: -14.5%;
+    }
+    
+
+    .barra:hover h2{
+        /*posicion dentro de barra del h2*/
+        padding:10px;
+        font-size: 2.5em;
+    }
+    .barra:hover a{ 
+        font-size: 1.5em;
+        color:white;
+        /*Se usa el display block para que el enlace respete el margin*/
+        display: block;
+        padding:20px;
+    }
+}
+/*CRIERRE Responsive barra*/
+
+
+
+
+.menu{
+    float: right;
+    line-height: 100px;
+    margin-right: 3%;
+    margin-top: -5%;
+}
+
+.menu a{
+    display: inline-block;
+    padding: 15px;
+    line-height: normal;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    margin-right: 5px;
+}
+.menu a:hover{
+    border-bottom: 2px solid rgb(173,31,165);
+    padding-bottom: 5px;
+}
+
+.centrar-imagen{
+    width: 15%;
+    margin:  0 auto;
+}
+
+.logo-menu{
+    padding-top: 5%;
+    width: 190px;
+    height: 60px;
+
+}
+
+
+	 /*LOGIN*/
+     .login-box {
+        width: 320px;
+        height: auto;
+        background: white;
+        color: rgb(173,31,165);
+        border: 2px solid rgb(173,31,165) ;
+        top: 50%;
+        left: 50%;
+        margin: 0 auto;
+        margin-top: 8%;
+        position: unset;
+        /*transform: translate(-50%, -50%);
+        box-sizing: border-box;*/
+        padding: 30px 30px;
+        border-radius: 15px;
+      }
+      
+      .login-box .login-imagen {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        top: -50px;
+        left: calc(50% - 50px);
+      }
+      
+      .login-box h1 {
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 22px;
+      }
+      
+      .login-box input {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      
+      .login-box input[type="text"], .login-box input[type="password"] {
+        border: none;
+        border-bottom: 1px solid rgb(173,31,165);
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: black;
+        font-size: 16px;
+      }
+      
+      .login-box button[type="submit"] {
+        border: none;
+        outline: none;
+        height: 40px;
+        width: 100%;
+        margin-bottom: 7px;
+        background: rgb(173,31,165);
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 20px;
+      }
+      
+      .login-box button[type="submit"]:hover {
+        cursor: pointer;
+        background: rgb(179, 62, 173);
+        color: #fff;
+      }
+      
+      .login-box input[type="submit"] {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: #8D2828;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+      }
+      
+      .login-box input[type="submit"]:hover {
+        cursor: pointer;
+        background: #91a16a;
+        color: #fff;
+      }
+      /*CIERRE LOGIN*/
+
+
+#fecha{
+
+        color: #0c0c0c;
+        border: 2px solid rgb(179, 62, 173);
+        height: 30px;
+        border-radius: 10px;
+}
+.tit{
+    color: grey;
+    font-size: 1.03em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+}
+/*TABLAS*/
+
+.table{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 70%; 
+    margin: 0 auto;
+    padding: 10px;
+
+}
+
+.table::-webkit-scrollbar{
+    width: 9px;
+}
+
+.table::-webkit-scrollbar-thumb{
+    background-color: rgb(179, 62, 173);
+    border-radius: 10px;
+    
+}
+.table::-webkit-scrollbar-track{
+    background-color: #9c9c9ca6;
+    border-radius: 10px;
+    
+}
+
+.tablecentrar{
+    margin: 0 auto;
+    padding: 10px;
+
+}
+.scroll{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+th{
+    background-color: rgb(173,31,165);
+    color: white;
+    font-size: 1.1em;
+    padding: 10px;
+    width: auto;
+    height:20px;
+    border-radius: 10px;
+}
+
+td input{
+    background-color: white;
+    color: black;
+    font-size: 1.1em;
+    border: 2px solid rgb(173,31,165);
+    padding: 10px;
+    width: auto;
+    height:25px;
+    text-align: center;
+}
+
+td input[type=submit]{
+    height: 50px;
+    text-align: center;
+    background-color: white;
+    color: rgb(173,31,165);
+    border-radius: 22px;
+  }
+
+
+  #imgen{
+      width: 100px;
+      height: 100px;
+  }
+/*CIERRE TABLAS*/
+
+/*conoce*/
+.conoce{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    height: 400px;
+    
+}
+.conoce .titulo{
+    color:  black;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size:50px
+}
+.conoce .contconoce{
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 10px;
+}
+.conoce .contconoce img{
+    width: 100%;
+    height: 400px;
+}
+.container{
+    width: 100%;
+    display:flex;
+    max-width: 300px;
+}
+/*CIERRE CONOCE*/

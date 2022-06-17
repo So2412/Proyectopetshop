@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/actualizarmasco.js"></script>
+    <script src="js/eliminarmasco.js"></script>
+    <link href="css/administrador.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Usuario</title>
+</head>
+<body>
+
+    <section class="centrar-imagen">
+        <img src="ima/logo.PNG" class="logo-menu">
+    </section>
+    <header class="Tituloosm">   
+        <section class="barra">
+            <h2>Menu<img src="ima/lista_icono2.png" alt=""></h2>
+            <ul>
+                <li><a href="/pedido">Pedido</a></li>
+                <li><a href="/proveedor">Proveedor</a></li>
+                <li><a href="/servicios">Servicios</a></li>
+                <li><a href="/usuarios">Usuarios</a></li>
+                <li><a href="/categoria">Categoria</a></li>
+                <li><a href="/cita">Cita</a></li>
+                <li><a href="/detallecita">Detalle cita</a></li>
+                <li><a href="/detallepedido">Detalle pedido</a></li>
+                <li><a href="/dueno">Dueño</a></li>
+                <li><a href="/insumos">Insumos</a></li>
+                <li><a href="/mascota">Mascota</a></li>
+                <li><a href="/producto">Producto</a></li>
+                <li><a href="/ventas">Ventas</a></li>
+                <li><a href="/veterinario">Veterinario</a></li>
+            </ul>
+           
+        </section> 
+    </header>
+    <nav class="menu">
+        <a href="cerrar">Cerrar sesion</a>
+    </nav>
+    <div class="login-box">
+        <h1>Mascota</h1>
+        <form action="/frminsertarmascotas" method="POST">
+          <!--  INPUT -->
+          <!--<input type="text" name="MascoId" class="" placeholder="Id Mascota" >-->
+          <input type="text" name="MascoDocDue" class="" placeholder="Documento Dueño">
+          <input type="text" name="MascoNombre" class="" placeholder="Nombre">
+          <input type="text" name="MascoClase" class="" placeholder="Clase">
+          <input type="text" name="MascoRaza" class="" placeholder="Raza">
+          <input type="text" name="MascoPeso" class="" placeholder="Peso">
+
+          <!--  BUTTON -->
+          <button type="submit">Insertar</button>
+        </form>
+      </div>
+
+      <from action="" name="frm" id="frm" class="tabla">
+        <section class="scroll">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID MASCOTA</th>
+                    <th>DOCUMENTO DUEÑO</th>
+                    <th>NOMBRE MASCOTA</th>
+                    <th>CLASE</th>
+                    <th>RAZA</th>
+                    <th>PESO</th>
+                    <th>ACTUALIZAR</th>
+                    <th>ELIMINAR</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+             <% datos.forEach(function (datos){ %>    
+                <tr>
+                    <td><input type="text" value="<%=datos.MascoId%>" name="id" id="id" class="id"></td>
+                    <td><input type="text" value="<%=datos.MascoDocDue%>" name="doc" id="doc" class="doc"></td>
+                    <td><input type="text" value="<%=datos.MascoNombre%>" name="nom" id="nom" class="nom"></td>                
+                    <td><input type="text" value="<%=datos.MascoClase%>" name="cla" id="cla" class="cla"></td> 
+                    <td><input type="text" value="<%=datos.MascoRaza%>" name="ra" id="ra" class="ra"></td> 
+                    <td><input type="text" value="<%=datos.MascoPeso%>" name="pe" id="pe" class="pe"></td>
+                    <td><input type="submit" value="Actualizar" name="btnact" id="btnact" class="btnact"></td>
+                    <td><input type="submit" value="Eliminar" name="btneli" id="btneli" class="btneli"></td>                                
+                </tr>
+             <%})%>
+            </tbody>
+        </table>
+    </section>
+    </from>
+
+</body>
+</html>

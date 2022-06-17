@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Consultar por precio</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="img/logo_small_icon_only_inverted.png">
+    <link href= "css/precio.css" rel="stylesheet" type="text/css">
+    <link href= "css/formpre.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+
+    <nav>
+        <div class="navbar">
+          <i class='bx bx-menu'></i>
+          <div class="logo"><img src="ima/logo.PNG" class="logo-menu"></div>
+          <div class="nav-links">
+            <div class="sidebar-logo">
+              <span class="logo-name">Menú</span>
+              <i class='bx bx-x' ></i>
+            </div>
+            <ul class="links">
+              <li><a href="/">Inicio</a></li>
+              <li><a href="/nosotros">Nosotros</a></li>
+              <li>
+                <a href="">Productos</a>
+                <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                <ul class="js-sub-menu sub-menu">
+                  <li><a href="/alimento">Alimentos</a></li>
+                  <li><a href="/juguete">Juguetes</a></li>
+                  <li><a href="/accesorio">Accesorios</a></li>
+                  <li><a href="/farmaceutica">Farmaceutica</a></li>
+                  <li><a href="/precio">Consultar por precio</a></li>
+                </ul>
+              </li>
+              <li><a href="/agendarcitas">Agendar citas</a></li>
+              <li><a href="/ingresar">Ingresar Admin</a></li>
+            </ul>
+          </div>
+    
+      </nav>
+
+    <section class="container">
+		<div class="contact-box">
+			<form class="right" action="/consulta" method="POST">
+				<h1 class="container-h1">Consulta por precio</h1>
+                <h3 class="container-h3">Consulta por un rango de precios que tu escojas</h3>
+                <label>Valor maximo</label>
+                <input class="maximo" name="maximo" type="number" placeholder="Valor maximo" aria-label="search"><br>
+                <label >Valor minimo</label>
+                <input class="minimo" name="minimo" type="number" placeholder="Valor minimo" aria-label="search">
+				<button  class="btn">Consultar</button>
+            </form>
+		</div>
+    </section>
+   
+    <div class="wrapper">
+     
+    
+        <div class="cards_wrap">
+            <% datos.forEach(function (datos){ %>
+            <div class="card_item">
+              
+                <div class="card_inner">
+                    <img src=<%=datos.ProduImagen%>>
+                    <div class="role_name"><%=datos.ProduNombre%></div>
+                    <div class="film"><%=datos.ProduPrecio%></div>
+                </div>
+                
+            </div>
+            <%})%> 
+        </div>
+    </div>
+ 
+
+
+    <script src="js/barralateral.js"></script>
+
+</body>
+</html>
