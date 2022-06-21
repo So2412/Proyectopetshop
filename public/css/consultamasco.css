@@ -132,11 +132,12 @@ textarea{
     display: block;
     overflow-x: auto;
     white-space: nowrap;
-    width: 70%; 
+    width: 75%; 
     margin: 0 auto;
     padding: 10px;
 
 }
+
 
 .table::-webkit-scrollbar{
     width: 9px;
@@ -189,6 +190,11 @@ td input[type=submit]{
     background-color: white;
     color: rgb(173,31,165);
     border-radius: 22px;
+  }
+  td input[type=submit]:hover{
+    background-color: rgba(0, 0, 0, 0.597);
+    color: white;
+	border: 2px solid black;
   }
 /*CIERRE TABLA*/
 

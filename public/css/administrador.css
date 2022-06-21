@@ -295,7 +295,7 @@ background: url("../ima/fondo3.png") no-repeat center center/cover;
     display: block;
     overflow-x: auto;
     white-space: nowrap;
-    width: 70%; 
+    width: 98%; 
     margin: 0 auto;
     padding: 10px;
 
@@ -334,7 +334,11 @@ th{
     height:20px;
     border-radius: 10px;
 }
-
+td input[type=submit]:hover{
+    background-color: rgba(0, 0, 0, 0.597);
+    color: white;
+	border: 2px solid black;
+  }
 td input{
     background-color: white;
     color: black;

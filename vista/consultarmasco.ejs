@@ -22,7 +22,43 @@
 
     <from action="" name="frm" id="frm" class="tabla">
         <section class="scroll">
+
+            <table class="tablecentrar">
+            
+                <% tbdueño.forEach(function (tbdueño){ %> 
+                <tr>
+                    <th colspan="2">Datos personales del dueño</th>
+                  </tr>
+                
+                  <tr>
+                    <th>Documento</th>
+                    <td><input type="text" value="<%=tbdueño.DueDoc%>" name="ra" id="ra" class="ra" readonly></td>  
+                  </tr>
+                
+                  <tr> 
+                    <th>Nombre</th>
+                    <td><input type="text" value="<%=tbdueño.DueNombre%>" name="ra" id="ra" class="ra" readonly></td>   
+                  </tr>
+                
+                  <tr>
+                    <th>Apellido</th>
+                    <td><input type="text" value="<%=tbdueño.DueApellido%>" name="ra" id="ra" class="ra" readonly></td> 
+                  </tr>
+    
+                  <tr>
+                    <th>Correo</th>
+                    <td><input type="text" value="<%=tbdueño.DueCorreo%>" name="ra" id="ra" class="ra" readonly></td> 
+                  </tr>
+    
+                  <tr>
+                    <th>Telefono</th>
+                    <td><input type="text" value="<%=tbdueño.DueriTelefo%>" name="ra" id="ra" class="ra" readonly></td> 
+                  </tr>
+                  <%})%>
+            </table>
+
         <table class="table">
+            <% datos.forEach(function (datos){ %> 
             <thead>
                 <tr>
                     <th>ID MASCOTA</th>
@@ -33,18 +69,21 @@
             </thead>
     
             <tbody>
-             <% datos.forEach(function (datos){ %>    
+                
                 <tr>
                     <td><input type="text" value="<%=datos.MascoId%>" name="id" id="id" class="id" readonly></td>
                     <input type="hidden" value="<%=datos.MascoDocDue%>" name="doc" id="doc" class="doc">
                     <td><input type="text" value="<%=datos.MascoNombre%>" name="nom" id="nom" class="nom" readonly></td>                
-                    <input type="hidden" value="<%=datos.MascoClase%>" name="cla" id="cla" class="cla">
+                    <input type="hidden" value="<%=datos.MascoClase%>" name="cla" id="cla" class="cla">  
                     <td><input type="text" value="<%=datos.MascoRaza%>" name="ra" id="ra" class="ra" readonly></td> 
                     <td><input type="text" value="<%=datos.MascoPeso%>" name="pe" id="pe" class="pe" readonly></td>                               
                 </tr>
-             <%})%>
+                
             </tbody>
+            <%})%>
         </table>
+
+       
     </section>
     </from>
 

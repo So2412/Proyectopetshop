@@ -659,7 +659,10 @@ nav .navbar .links li:hover .js-sub-menu{
       margin: 20px;
       padding-top: 40px;
     }
-
+    .login-design img{
+      width: 62%;
+      height: 420px;
+  }
 }
 @media (max-width:800px){
   nav{
@@ -815,7 +818,10 @@ nav .navbar .links li .sub-menu li{
       margin: 20px;
       padding-top: 40px;
     }
-
+    .login-design img{
+      width: 65%;
+      height: 400px;
+  }
 }
 
 @media (max-width:670px){
@@ -841,7 +847,10 @@ nav .navbar .links li .sub-menu li{
     border-radius: 10px;
     color: #ffffff;
   }
-
+  .login-design img{
+    width: 65%;
+    height: 400px;
+}
 }
 
 @media (max-width:600px){
@@ -878,12 +887,26 @@ nav .navbar .links li .sub-menu li{
       margin: 20px;
       padding-top: 40px;
     }
+    .login-design img{
+      width: 70%;
+      height: 370px;
+  }
 }
-
+@media (max-width:470px){
+  .login-design img{
+  width: 82%;
+  height: 300px;
+}
+}
 
 @media (max-width:370px){
   nav .navbar .nav-links{
   max-width: 100%;
+  
 } 
+.login-design img{
+  width: 87%;
+  height: 230px;
+}
 }
 /*CIERRE MEDIA*/

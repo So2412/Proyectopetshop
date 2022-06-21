@@ -1075,20 +1075,27 @@ controller.insertarmascotas=async(req,res,next)=>{
     }
 
     controller.consultadatmascopri=(req,res,next)=>{
-        
+
         const n=req.body.numeroidentidad;
-         
-          cnn.query('SELECT * FROM tbmascota WHERE MascoDocDue=?',[n],(err,resbd)=>{
-              if(err){
-                next(new Error(err))  
-                console.log("Error en la consulta")
-              }
-              else{
-                  console.log(resbd)
-                  res.render('consultarmasco',{datos:resbd});
-              }
-          }) 
-       
+    
+            cnn.query('SELECT * FROM tbmascota WHERE MascoDocDue=?',[n],(err,result)=>{
+                if(err){
+                    throw err
+                }
+                else{
+                    cnn.query('SELECT * FROM tbdueño WHERE DueDoc=?',[n],(err,resbb)=>{
+                        if(err){
+                            throw err
+                        }
+                        else{
+                            res.render('consultarmasco',{datos:result,tbdueño:resbb})
+                            console.log(result)
+    
+                        }
+                    })
+    
+                }
+            })
     }
 /*CIERRE MASCOTA*/
 

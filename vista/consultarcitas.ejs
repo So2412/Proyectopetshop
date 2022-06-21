@@ -25,39 +25,60 @@
 
     <from action="" name="frm" id="frm" class="tabla">
         <section class="scroll">
-        <table class="table">
-            <thead>
+
+            <table class="tablecentrar" id="botomm">
+            
+                <% datos.forEach(function (datos){ %>  
                 <tr>
-                    <th>ID CITA</th>
+                    <th colspan="2">CITA AGENDADA</th>
+                  </tr>
+
+                  <tr>
+                    <th>ID</th>
+                    <td><input type="text" value="<%=datos.CitaId%>" name="cit" id="cit" class="cit" readonly></td>                  </tr>
+                
+                  <tr> 
                     <th>ID SERVICIO</th>
-                    <th>ID MASCOTA</th>
-                    <th>DOCUMENTO VETERINARIO</th>
-                    <th>CORREO</th>
-                    <th>TELEFONO</th>
-                    <th>HORA ASIGNADA</th>
-                    <th>FECHA ASIGNADA</th>
-                </tr>
-            </thead>
-    
-            <tbody>
-             <% datos.forEach(function (datos){ %>    
-                <tr>
-                    <td><input type="text" value="<%=datos.CitaId%>" name="cit" id="cit" class="cit" readonly></td>
                     <td><input type="text" value="<%=datos.CitaIdServi%>" name="ser" id="ser" class="ser" readonly></td>
-                    <td><input type="text" value="<%=datos.CitaIdMasco%>" name="mas" id="mas" class="mas" readonly></td>                
-                    <td><input type="text" value="<%=datos.CitaDocVeteri%>" name="vet" id="vet" class="vet" readonly></td> 
-                    <td><input type="text" value="<%=datos.CitaCorreo%>" name="cor" id="cor" class="cor" readonly></td> 
-                    <td><input type="text" value="<%=datos.CitaTelefo%>" name="tel" id="tel" class="tel" readonly></td>
-                    <td><input type="text" value="<%=datos.CitaHoraAsig%>" name="hor" id="hor" class="hor" readonly></td>
-                    <td><input type="text" value="<%=datos.CitaFechaAsig%>" name="fec" id="fec" class="fec" readonly></td>
-                    <td><input type="submit" onclick="cancelada()" value="CANCELAR" name="btneli" id="btneli" class="btneli" readonly></td>                                
                 </tr>
-             <%})%>
-            </tbody>
-        </table>
+                
+                  <tr>
+                    <th>ID MASCOTA</th>
+                    <td><input type="text" value="<%=datos.CitaIdMasco%>" name="mas" id="mas" class="mas" readonly></td>                
+                </tr>
+    
+                  <tr>
+                    <th>VETERINARIO</th>
+                    <td><input type="text" value="<%=datos.CitaDocVeteri%>" name="vet" id="vet" class="vet" readonly></td> 
+                </tr>
+    
+                  <tr>
+                    <th>CORREO</th>
+                    <td><input type="text" value="<%=datos.CitaCorreo%>" name="cor" id="cor" class="cor" readonly></td> 
+                </tr>
+
+                <tr>
+                    <th>TELEFONO</th>
+                    <td><input type="text" value="<%=datos.CitaTelefo%>" name="tel" id="tel" class="tel" readonly></td>
+                </tr>
+
+                <tr>
+                    <th>HORA ASIGNADA</th>
+                    <td><input type="text" value="<%=datos.CitaHoraAsig%>" name="hor" id="hor" class="hor" readonly></td>
+                </tr>
+
+                <tr>
+                    <th>FECHA ASIGNADA</th>
+                    <td><input type="text" value="<%=datos.CitaFechaAsig%>" name="fec" id="fec" class="fec" readonly></td>
+                </tr>
+
+                <tr>
+                  <td colspan="2" ><input type="submit" onclick="cancelada()" value="CANCELAR CITA" name="btneli" id="btneli" class="btneli" readonly></td>                                
+                </tr>
+                  <%})%>
+            </table>       
     </section>
     </from>
-
     <section class="contenedorboton">
         <a href="/agendarcitas"><button class="botoncont">Da click aqui para volver</button></a>
     </section>
